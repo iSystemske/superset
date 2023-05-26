@@ -265,9 +265,9 @@ FLASK_USE_RELOAD = True
 PROFILING = False
 
 # Superset allows server-side python stacktraces to be surfaced to the
-# user when this feature is on. This may has security implications
+# user when this feature is on. This may have security implications
 # and it's more secure to turn it off in production settings.
-SHOW_STACKTRACE = True
+SHOW_STACKTRACE = False
 
 # Use all X-Forwarded headers when ENABLE_PROXY_FIX is True.
 # When proxying to a different port, set "x_port" to 0 to avoid downstream issues.
@@ -515,6 +515,7 @@ DEFAULT_FEATURE_FLAGS: Dict[str, bool] = {
 # ----------------------------------------------------------------------
 SSH_TUNNEL_MANAGER_CLASS = "superset.extensions.ssh.SSHManager"
 SSH_TUNNEL_LOCAL_BIND_ADDRESS = "127.0.0.1"
+SSH_TUNNEL_TIMEOUT_SEC = 10.0
 
 # Feature flags may also be set via 'SUPERSET_FEATURE_' prefixed environment vars.
 DEFAULT_FEATURE_FLAGS.update(
